@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/Avia</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Graphic_Avia@localhost" uuid="457d4d05-615c-4826-acdf-a8574fa95dcd">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Graphic_Avia</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

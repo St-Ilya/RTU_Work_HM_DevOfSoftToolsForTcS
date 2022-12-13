@@ -10,4 +10,11 @@ public abstract class AbstractPerson implements HumanInterface{
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "AbstractPerson{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

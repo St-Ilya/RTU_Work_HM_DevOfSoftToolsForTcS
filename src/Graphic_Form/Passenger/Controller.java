@@ -1,4 +1,4 @@
-package Graphic_Form;
+package Graphic_Form.Passenger;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -15,11 +15,11 @@ public class Controller {
         }
     }
 
-    public void addEmplyee(Employee employee) {
-        db.addEmployeeToDatabase(employee);
+    public void addPassenger(PassengerColumns passengerColumns) { //addEmplyee = addPassenger
+        db.addPassengerToDatabase(passengerColumns);
     }
 
-    public List<Employee> getEmployes() {
-        return db.getEmployees();
+    public List<PassengerColumns> getPass() {
+        return db.getPass();
     }
 }

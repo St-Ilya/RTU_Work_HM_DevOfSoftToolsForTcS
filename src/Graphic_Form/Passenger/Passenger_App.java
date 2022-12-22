@@ -1,16 +1,16 @@
-package Graphic_Form;
+package Graphic_Form.Passenger;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Travel_Tracking_App extends Container {
+public class Passenger_App extends Container {
     private JPanel Passenger;
     private JTextField nameTextField;
     private JButton addButton;
 
-    public Travel_Tracking_App() {
+    public Passenger_App() {
         Controller controller = new Controller();
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -30,11 +30,11 @@ public class Travel_Tracking_App extends Container {
                     return;
                 }
 
-                Employee employee = new Employee(nameText);
-                controller.addEmplyee(employee);
+                PassengerColumns passengerColumns = new PassengerColumns(nameText);
+                controller.addPassenger(passengerColumns);
                 String message = "Correct";
 
-                JOptionPane.showMessageDialog(new JFrame(), employee.toString(), "Input Information OK",
+                JOptionPane.showMessageDialog(new JFrame(), passengerColumns.toString(), "Input Information OK",
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });

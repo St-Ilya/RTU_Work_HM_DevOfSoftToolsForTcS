@@ -1,27 +1,26 @@
-package Graphic_Form;
+package Graphic_Form.Passenger;
 
-import org.postgresql.core.SqlCommand;
-
-import javax.naming.Name;
 import java.sql.*;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 public class DataBase {
-    private List<Employee> employees;
+    //Employee = PassengerColumns
+    //employees = passengerColumnsList
+    private List<PassengerColumns> passengerColumnsList;
     private Connection con;
 
     public DataBase() {
-        employees = new LinkedList<Employee>();
+        passengerColumnsList = new LinkedList<PassengerColumns>();
     }
 
-    private void addEmplyee(Employee person) {
-        employees.add(person);
+    private void addPassengerPerson(PassengerColumns person) { //addEmplyee = addPassengerPerson
+        passengerColumnsList.add(person);
     }
 
-    public List<Employee> getEmployees() {
-        return Collections.unmodifiableList(employees);
+    public List<PassengerColumns> getPass() { //getEmployees
+        return Collections.unmodifiableList(passengerColumnsList);
     }
 
     public void connect() throws SQLException{
@@ -60,8 +59,8 @@ public class DataBase {
         sqlStmt.close();
     }
 
-    public void addEmployeeToDatabase(Employee employee) {
-        String name = employee.getName();
+    public void addPassengerToDatabase(PassengerColumns passengerColumns) {
+        String name = passengerColumns.getName();
         String sql = "INSERT INTO passenger (name) VALUES ('"+name+"')";
         System.out.println("SQL = " + sql);
 
@@ -76,7 +75,7 @@ public class DataBase {
     }
 
     public void getFromDatabase() {
-        employees.clear();
+        passengerColumnsList.clear();
 
         String sql = "SELECT * FROM passenger";
 
@@ -84,8 +83,8 @@ public class DataBase {
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet set = stmt.executeQuery();
             while (set.next()) {
-                Employee temp = new Employee(set.getString("name"));
-                addEmplyee(temp);
+                PassengerColumns temp = new PassengerColumns(set.getString("name"));
+                addPassengerPerson(temp);
             }
             stmt.close();
         } catch (SQLException e) {
